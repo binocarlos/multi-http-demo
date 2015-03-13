@@ -3,7 +3,7 @@ var concat = require('concat-stream')
 var hyperquest = require('hyperquest')
 
 var serverIP = process.env.API_IP || '10.255.0.10';//process.env.API_IP;
-var serverPort = 80;
+var serverPort = process.env.API_PORT || 80;
 
 var server = http.createServer(function(req, res){
   var req = hyperquest('http://' + serverIP + ':' + serverPort).pipe(concat(function(body){
