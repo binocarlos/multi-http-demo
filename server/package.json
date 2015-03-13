@@ -1,0 +1,17 @@
+{
+  "name": "powerstrip-weave-fig-example",
+  "version": "0.0.0",
+  "description": "An example using weave from fig",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/binocarlos/powerstrip-weave.git"
+  },
+  "author": "Kai Davenport",
+  "license": "MIT",
+  "dependencies": {
+    "concat-stream": "^1.4.7",
+    "hyperquest": "^1.0.1"
+  },
+  "devDependencies": {}
+}
