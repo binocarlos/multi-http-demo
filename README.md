@@ -30,6 +30,35 @@ Because I wanted 2 services communicating over a network to fulfill a front-end 
 
 The simpler the services the better because the point is to show how to deploy the services and setup SDN networking between them.
 
+## Docker
+
+The 2 services are automated builds on the Docker Hub as the following:
+
+ * binocarlos/multi-http-demo-server
+ * binocarlos/multi-http-demo-api
+
+An example of running the 2 using docker - we assume the IP of the host is 192.168.8.120
+
+#### server
+
+```bash
+$ docker run -d 
+    -p 8080:80 \
+    -e API_IP=192.168.8.120 \
+    -e API_PORT=8081 \
+    binocarlos/multi-http-demo-server
+```
+
+#### api
+
+```bash
+$ docker run -d 
+    -p 8081:80 \
+    -e DATA_FILE=/tmp/db.txt \
+    -v /tmp/db.txt:/tmp/db.txt \
+    binocarlos/multi-http-demo-api
+```
+
 ## Licence
 
 MIT
